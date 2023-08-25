@@ -35,10 +35,6 @@
 
  
 
-      - name: Gathering facts 
-        become: true
-        setup:
-
  
       - name: Run some task on Windows
         win_service:
