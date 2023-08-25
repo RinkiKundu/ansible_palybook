@@ -24,7 +24,7 @@
     - HOSTS:
   tasks:
     - block:
-      - name: "Check if host is available on port SSH (22)"
+      - name: "Check if host is available on port TCP port 5986"
         wait_for:
           host: "{{ inventory_hostname }}"
           port: 5986
