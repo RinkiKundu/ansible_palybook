@@ -3,12 +3,6 @@
 
 
   tasks:
-    # - name: print username
-    #   set_fact:
-    #     host: "{{ var_db_hostname }}"
-    #     password: "{{ var_db_password }}"
-    #     user: "{{var_db_username }}"
-
     - name: Execute MySQL Query
       community.mysql.mysql_query:
         login_host: "{{ var_db_hostname }}"
