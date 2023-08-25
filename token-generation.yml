@@ -8,7 +8,7 @@
       set_fact:
         instance_url: "{{ var_url }}"
         password: "{{ var_pass }}"
-        user: "{{ var_user }}"
+        username: "{{ var_user }}"
         client_id: "{{ var_client_id }}"
         client_secret: "{{ var_client_secret  }}"
 
