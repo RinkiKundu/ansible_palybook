@@ -40,21 +40,11 @@
         setup:
 
  
+      - name: Run some task on Windows
+        win_service:
+          name: spooler
+          state: started
 
-      - name: Log output for SYNTBOT
-        debug:
-          msg:
-            - "SYNTBOT_OUTPUT: SUCCESSFUL: {{ ansible_host }} is up "
-            - "SYNTBOT_DISPLAY: server reboot: {{ '%Y-%m-%d %H:%M %Z' | strftime( ( ansible_date_time.epoch | int ) - ( ansible_uptime_seconds | int )  ) }} server time: {{ '%Y-%m-%d %H:%M %Z' | strftime( ( ansible_date_time.epoch | int )) }}"
-
- 
-
-#      - name: Log output for SYNTBOT
-#        debug:
-#          msg:
-#            - "SYNTBOT_OUTPUT: SUCCESSFUL: {{ HOSTS }} is up "
-#            - "SYNTBOT_DISPLAY: {{ facter_uptime_days }} day(s) / {{ facter_uptime_hours }} hour(s) of uptime"
-#        when: facter_uptime_days is defined
 
  
 
