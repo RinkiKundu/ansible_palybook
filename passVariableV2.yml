@@ -1,6 +1,6 @@
 ---
 - name: Install apache2 
-  hosts: 16.170.246.141
+  hosts: "{{ host }}"
   remote_user: root
   become: yes
   gather_facts: yes 
