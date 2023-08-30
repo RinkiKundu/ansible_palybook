@@ -1,6 +1,6 @@
 ---
 - name: Install apache2 
-  hosts: 16.170.246.141
+  hosts: all
   remote_user: root
   gather_facts: yes 
 
