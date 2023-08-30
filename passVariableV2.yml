@@ -2,6 +2,7 @@
 - name: Install apache2 
   hosts: all
   remote_user: root
+  become: yes
   gather_facts: yes 
 
 
