@@ -4,4 +4,4 @@
     tower_username: rayank
     tower_password: rayank
     validate_certs: False  # Set to True if you want to validate SSL certificates
-    job_template: checkUptime
+    job_template: get-dateTime
