@@ -8,7 +8,7 @@
   tasks:
     - name: Read a file
       slurp:
-        src: /home/ubuntu/.ansible/jsonPayload.txt
+        src: jsonPayload.txt
       register: output
 
     - name: Parse JSON
