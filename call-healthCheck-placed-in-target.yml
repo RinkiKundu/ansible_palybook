@@ -21,3 +21,9 @@
     - name: Print HTML file path
       debug:
         var: html_file_path
+
+    - name: Copy the HTML report back to the Ansible control machine
+      win_get_url:
+        url: "{{ html_file_path }}"
+        dest: "/home/ec2-user/reports"
+      delegate_to: localhost
