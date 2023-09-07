@@ -1,6 +1,7 @@
 ---
 - name: Execute PowerShell Script
   hosts: "{{ host }}"
+  become: yes
   gather_facts: no  # Disable fact gathering for Windows hosts
 
   tasks:
