@@ -30,7 +30,7 @@
 
   - name: Fetch the file from the remote machine
     fetch:
-      src: "C:\PrePostChecks-without-BIB\Logfiles\07-09-2023\Windows Healthcheck Report.log" 
-      dest: "/home/ec2-user/reports"  # Replace with the local path to store the file
+      src: "C:\\PrePostChecks-without-BIB\\Logfiles\\07-09-2023\\Windows Healthcheck Report.log" 
+      dest: '/home/ec2-user/reports'  # Replace with the local path to store the file
       flat: yes  # If you want to copy the file without creating a directory structure
     delegate_to: localhost
