@@ -18,13 +18,10 @@
       debug:
          msg: "Name is {{ Name }}"
 
-    - name:
-      file:
-        path: /root/file1
-        state: touch
 
-    # - name: Install apache Service
-    #   apt:
-    #     name: apache2
-    #     state: absent
+
+    - name: Install apache Service
+      apt:
+        name: apache2
+        state: present
  
