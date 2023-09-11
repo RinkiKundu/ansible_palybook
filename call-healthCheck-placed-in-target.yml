@@ -23,11 +23,16 @@
       debug:
         var: html_file_path
 
-    - name: Copy the HTML report back to the Ansible control machine
-      win_get_url:
-        url: "{{ html_file_path }}"
-        dest: "/home/ec2-user/reports"
-     delegate_to: localhost
+    # - name: Copy the HTML report back to the Ansible control machine
+    #   win_get_url:
+    #     url: "{{ html_file_path }}"
+    #     dest: "/home/ec2-user/reports"
+    #  delegate_to: localhost
+
+  - name:  Store file into /tmp/fetched/host.example.com/tmp/somefile
+    fetch:
+      src: "{{ html_file_path }}"
+      dest: "/home/ec2-user/reports"
 
   # - name: Fetch the file from the remote machine
   #   fetch:
