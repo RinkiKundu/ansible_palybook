@@ -11,8 +11,8 @@
        
         login_password: "{{ var_db_password }}"
 
-        login_db: cat
-        query: "SELECT * FROM `incidentdata.ci_details`;"
+        login_db: incidentdata
+        query: "SELECT * FROM `ci_details`;"
       register: query_result
 
     - name: Debug Query Result
