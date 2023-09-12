@@ -6,7 +6,7 @@
     validate_certs: False  # Set to True if you want to validate SSL certificates
     job_template: get-dateTime
     credentials:
-      - "ec2-New"
+      - "4"
     extra_vars:
       food: grape
       animal: owl
