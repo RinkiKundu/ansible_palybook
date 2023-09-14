@@ -39,7 +39,7 @@
 
     - name: set fact PAT token
       set_fact:
-        patToken: response.json.access_token        
+        patToken: "{{ response.json.access_token }}"      
 
     - name: Trigger a incident poller template 
       awx.awx.job_launch:
