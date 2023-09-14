@@ -11,4 +11,4 @@
 
 - name: Print Query Result
   debug:
-    var: alert_names
+    var: query_result
