@@ -29,10 +29,10 @@
     #     dest: "/home/ec2-user/reports"
     #  delegate_to: localhost
 
-  - name:  Store file into /tmp/fetched/host.example.com/tmp/somefile
-    fetch:
-      src: "{{ html_file_path }}"
-      dest: "/home/ec2-user/reports"
+  # - name:  Store file into /tmp/fetched/host.example.com/tmp/somefile
+  #   fetch:
+  #     src: "{{ html_file_path }}"
+  #     dest: "/home/ec2-user/reports"
 
   # - name: Fetch the file from the remote machine
   #   fetch:
