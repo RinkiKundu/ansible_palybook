@@ -51,5 +51,5 @@
         credentials:
           - "82"
         extra_vars:
-          pat_token: patToken
+          pat_token: "{{ patToken }}"
       register: job_launch_result  
