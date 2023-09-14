@@ -20,11 +20,11 @@
           include_tasks: mysql_query_playbook.yml
           vars:
             query: "{{ mysql_query }}"
-          register: alert_names.query_result
+          register: alert_names
 
         - name: print var
           debug:
-            var: alert_names.query_result
+            var: alert_names
 
         # - name: Base64 encode credentials
         #   set_fact:
