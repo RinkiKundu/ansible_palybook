@@ -10,7 +10,7 @@
       #alerts: "['CPU Alert', 'Service Alert']"
     param: "?sysparm_query=short_descriptionLIKE"
     state: "%5Estate%3D1"
-    mysql_query: "SELECT * FROM incidentdata.config_table;"
+    mysql_query: "SELECT alert_name FROM incidentdata.config_table;"
     pat_token: "{{ pat_token }}"
 
   tasks:
