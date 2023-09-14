@@ -6,7 +6,7 @@
 
   tasks:
     - name: Execute the PowerShell script
-      win_command: powershell.exe -ExecutionPolicy Bypass -File "C:\PrePostChecks-without-BIB\MasterBots\Masterbot-WindowsHealthChecks.ps1"
+      win_command: powershell.exe -File "C:\PrePostChecks-without-BIB\MasterBots\Masterbot-WindowsHealthChecks.ps1"
       register: output
 
     - name: print the output
