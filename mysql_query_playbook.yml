@@ -8,10 +8,10 @@
     query: "{{ query }}"
   register: query_result
   
-- name: Print Query 
-  debug:
-    var: query
+# - name: Print Query 
+#   debug:
+#     var: query
 
-- name: Print Query Result
-  debug:
-    var: query_result
+# - name: Print Query Result
+#   debug:
+#     var: query_result
