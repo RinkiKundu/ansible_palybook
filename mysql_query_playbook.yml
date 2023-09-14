@@ -6,9 +6,13 @@
     login_db: "incidentdata"
     login_port: "{{ var_db_port }}"
     query: "{{ query }}"
-  register: query_result.query_result
+  register: query_result
+
+- name: set fact query result
+  set_fact:
+    alert_names: query_result.query_result
   
 
 - name: Print Query Result
   debug:
-    var: query_result.query_result
+    var: alert_names
