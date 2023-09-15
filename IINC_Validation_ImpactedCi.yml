@@ -3,36 +3,46 @@
   hosts: localhost
   gather_facts: no
   vars:
-    short_Descriptions: "{{ short_Descriptions }}"
+    #short_Descriptions: "{{ short_Descriptions }}"
     mysql_query: "SELECT * FROM incidentdata.incidentConfigDetails;;"
-    file_path: "inputValidationUsecasePayload1.txt"
+    #file_path: "inputValidationUsecasePayload1.txt"
     impacted_ci_List: []
     ticketType: "e2e"
-    incident: "{{ incident_data_validator }}"
+    incident_data_validator: "{{ incident_data_validator }}"
     
 
   tasks:
 
     - name: Display the incident data received from poller
       debug:
-        var:  incident
+        var:  incident_data_validator
         
-    - name: Read data from payload file
-      slurp:
-        src: "{{ file_path }}"
-      register: file_content
+    # - name: Read data from payload file
+    #   slurp:
+    #     src: "{{ file_path }}"
+    #   register: file_content
 
-    - name: Convert file content to JSON
+    # - name: Convert file content to JSON
+    #   set_fact:
+    #     json_data: "{{ file_content.content | b64decode | from_json }}"
+
+    # - name: Display the file data
+    #   debug:
+    #     var: json_data
+
+    - name: Extract Incident-number using json_query
       set_fact:
-        json_data: "{{ file_content.content | b64decode | from_json }}"
-
-    - name: Display the file data
+        incident_number: "{{ incident_data_validator | from_json | json_query('incident.\"Incident-number\"') }}"
+    
+    - name: Display the Incident-number
       debug:
-        var: json_data
+        var: incident_number
+
+
 
     - name: Extract Impacted CI 
       set_fact:
-       impacted_ci_List: "{{ json_data.body | json_query('impactedCi') }}"
+       impacted_ci_List: "{{ incident_data_validator.incident | json_query('impactedCi') }}"
       
 
     - name: Display the impacted ci 
