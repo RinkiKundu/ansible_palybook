@@ -84,7 +84,7 @@
       loop: "{{ alert_types }}"
       loop_control:
        loop_var: item
-      when: "item in incident_data_validator['short_description'] and item in incident_data_validator['description']"
+      when: "item in incident_data_validator.short_description and item in incident_data_validator.description"
      
 
     - name: Display the alertOutput
