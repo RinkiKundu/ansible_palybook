@@ -104,11 +104,11 @@
 
     - name: Extract tempId values from query_result
       set_fact:
-        tempId_List: "{{ query_result.query_result[0] | map(attribute='tempId') | list }}"
+        tempId: "{{ query_result.query_result[0] | map(attribute='tempId') }}"
 
     - name: Display all the tempId
       debug:
-         var: tempId_List
+         var: tempId
           
    
         
