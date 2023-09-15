@@ -10,6 +10,7 @@
     ticketType: "e2e"
     incident_data_validator: "{{ incident_data_validator }}"
     ci_name: "CI-001"  # harcoding ci_name , change it later 
+    alert_type_matched: []
     
 
   tasks:
@@ -86,7 +87,9 @@
       when: "item in incident_data_validator['short_description'] and item in incident_data_validator['description']"
      
 
-
+    - name: Display the alertOutput
+      debug:
+        msg: Hiiiiiiiiiiiiii
    
 
     - name: Display the alertOutput
