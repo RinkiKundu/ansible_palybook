@@ -108,11 +108,19 @@
           debug:
             var: final_incident_data
 
+
+        - name: call validator template in loop
+          include_tasks: triggering-template-validator.yml           
+          loop: "{{ final_incident_data }}"
+          loop_control:
+            loop_var: item  # This defines the loop variable 'item'
+
       rescue:
         - name: Log Output For Failure
           debug:
             msg: "Log : FAILED : Task {{ ansible_failed_task.name }} Failed and the ERROR: {{ ansible_failed_result }}"
           failed_when: True
+
 
 
         #############code to write log in the database
