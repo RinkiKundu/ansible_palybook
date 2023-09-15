@@ -112,7 +112,7 @@
         - name: call validator template in loop
           include_tasks: triggering-template-validator.yml
           vars:
-            incident_data: "{{ item }}"
+            incident_data_validator: "{{ item }}"
           loop: "{{ final_incident_data }}"
           loop_control:
             loop_var: item  # This defines the loop variable 'item'
