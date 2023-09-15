@@ -83,7 +83,7 @@
       loop: "{{ alert_types }}"
       loop_control:
        loop_var: item
-      when: "item in json_data.body.shortDescription and item in json_data.body.fullDescription"
+      when: "item in incident_data_validator['short_description'] and item in incident_data_validator['description']"
      
 
 
