@@ -6,11 +6,10 @@
     #short_Descriptions: "{{ short_Descriptions }}"
     mysql_query: "SELECT * FROM incidentdata.incidentConfigDetails;;"
     #file_path: "inputValidationUsecasePayload1.txt"
-    impacted_ci_List: []
     ticketType: "e2e"
     incident_data_validator: "{{ incident_data_validator }}"
     ci_name: "CI-001"  # harcoding ci_name , change it later 
-    alert_type_matched: []
+
     
 
   tasks:
@@ -86,12 +85,7 @@
        loop_var: item
       when: "item in incident_data_validator.short_description or item in incident_data_validator.description"  # adding or instead of and
      
-
-    - name: Display the alertOutput
-      debug:
-        msg: Hiiiiiiiiiiiiii
    
-
     - name: Display the alertOutput
       debug:
         var: alert_type_matched
@@ -109,6 +103,10 @@
     - name: Display all the tempId
       debug:
          var: tempId
+
+## calling end template by passing credId , tempId, ci-name , description , short-description
+
+
           
    
         
