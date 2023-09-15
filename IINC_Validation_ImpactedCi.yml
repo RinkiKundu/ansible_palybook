@@ -97,7 +97,7 @@
         var: alert_type_matched
 
     - name: Loop through the alert_type_matched
-      include_tasks: mysql_query_playbook.yml
+      include_tasks: mysql_query_playbook-Harsh.yml
       vars:  
         query: "select tempId from template_details where alertType = '{{ alert_type_matched[0] }}' ;"
       register: query_result
