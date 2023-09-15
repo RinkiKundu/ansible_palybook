@@ -10,6 +10,11 @@
     ticketType: "e2e"
 
   tasks:
+
+    - name: Display the incident data received from poller
+      debug:
+        var: "{{ incident_data_validator }}"
+        
     - name: Read data from payload file
       slurp:
         src: "{{ file_path }}"
