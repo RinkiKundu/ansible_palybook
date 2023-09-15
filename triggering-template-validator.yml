@@ -8,7 +8,7 @@
     credentials:
       - "82"
     extra_vars:
-      incident_data: "{{ incident_data }}"
+      incident_data: "{{ incident_data_validator }}"
   register: job_launch_result
 
 
