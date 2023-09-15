@@ -52,7 +52,7 @@
 
 
     - name: Get The cmdb details 
-      include_tasks: mysql_query_playbook.yml
+      include_tasks: mysql_query_playbook-Harsh.yml
       #loop: "{{ impacted_ci_List }}"
       #loop_control:
         #loop_var: impacted_ci
@@ -60,7 +60,7 @@
         query: "SELECT ci_name , credId FROM incidentdata.ci_details ci INNER JOIN incidentdata.`credId-details` cr ON ci.os = cr.os and ci.dns_domain = cr.`prod-EU-Domain` and ci.credType = cr.credType  where ci_name = '{{ ci_name }}';"
 
     - name: Get the tickettypes
-      include_tasks: mysql_query_playbook.yml
+      include_tasks: mysql_query_playbook-Harsh.yml
       vars:  
         query: "select alertType from template_details where ticketType='{{ ticketType }}' ;"
       register: query_result
