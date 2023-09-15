@@ -8,13 +8,14 @@
     file_path: "inputValidationUsecasePayload1.txt"
     impacted_ci_List: []
     ticketType: "e2e"
+    incident: "{{ incident_data_validator }}"
     
 
   tasks:
 
     - name: Display the incident data received from poller
       debug:
-        var: "{{ incident_data_validator }}"
+        var:  incident
         
     - name: Read data from payload file
       slurp:
