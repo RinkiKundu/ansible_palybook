@@ -9,6 +9,7 @@
     impacted_ci_List: []
     ticketType: "e2e"
     incident_data_validator: "{{ incident_data_validator }}"
+    ci_name: "CI-001"  # harcoding ci_name , change it later 
     
 
   tasks:
@@ -40,14 +41,14 @@
 
 
 
-    - name: Extract Impacted CI 
-      set_fact:
-       impacted_ci_List: "{{ incident_data_validator.incident | json_query('impactedCi') }}"
+    # - name: Extract Impacted CI 
+    #   set_fact:
+    #    impacted_ci_List: "{{ incident_data_validator.incident | json_query('impactedCi') }}"
       
 
-    - name: Display the impacted ci 
-      debug:
-        var: impacted_ci_List
+    # - name: Display the impacted ci 
+    #   debug:
+    #     var: impacted_ci_List
 
 
     - name: Get The cmdb details 
