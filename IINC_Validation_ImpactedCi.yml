@@ -8,7 +8,7 @@
     file_path: "inputValidationUsecasePayload1.txt"
     impacted_ci_List: []
     ticketType: "e2e"
-    incident_data_validator: []
+    
 
   tasks:
 
